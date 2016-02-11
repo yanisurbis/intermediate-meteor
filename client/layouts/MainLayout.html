@@ -1,0 +1,10 @@
+<template name="MainLayout">
+  <header>
+    <h1>My Recipe Book</h1>
+    {{> loginButtons}}
+  </header>
+  <main>
+    // area to get render content to, flow router
+    {{> Template.dynamic template=main}}
+  </main>
+</template>

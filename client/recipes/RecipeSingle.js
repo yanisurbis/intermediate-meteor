@@ -3,15 +3,18 @@
 Template.RecipeSingle.onCreated(function() {
   var self = this;
   self.autorun(function() {
-    self.subscribe('recipes')
+    var id = FlowRouter.getParam('id')
+    // console.log(id)
+    self.subscribe('singleRecipe', id)
   })
 })
 
 // console.log(Meteor.settings.public.ga.account)
 
 Template.RecipeSingle.helpers({
-  recipes: ()=> {
+  recipe: ()=> {
     var id = FlowRouter.getParam('id')
+    // console.log('second id' + id)
     return Recipes.findOne({_id: id})
   }
 })

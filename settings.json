@@ -1,0 +1,8 @@
+{
+  "hello": "private",
+  "public": {
+    "ga": {
+      "account": "account number"
+    }
+  }
+}

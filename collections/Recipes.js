@@ -1,5 +1,11 @@
 Recipes = new Meteor.Collection('recipes')
 
+Recipes.allow({
+  insert: function(userId, doc) {
+    return !!userId
+  }
+})
+
 RecipeSchema = new SimpleSchema({
   name: {
     type: String,
@@ -16,7 +22,7 @@ RecipeSchema = new SimpleSchema({
       return this.userId
     },
     autoform: {
-      type: hidden
+      type: "hidden"
     }
   },
   createdAt: {
@@ -26,7 +32,7 @@ RecipeSchema = new SimpleSchema({
       return new Date()
     },
     autoform: {
-      type: hidden
+      type: "hidden"
     }
   }
 })

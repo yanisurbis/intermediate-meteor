@@ -10,7 +10,11 @@
       {{/each}}
     </p>
     <a href="/recipe/{{_id}}">View Details</a>
-    <button type="button" class="btn-primary toggle-menu" name="button">Add To Menu</button>
-    <button type="button" class="btn-deny toggle-menu" name="button">Remove From Menu</button>
+
+    {{#if inMenu}}
+      <button type="button" class="btn-deny toggle-menu" name="button">Remove From Menu</button>
+    {{else}}
+      <button type="button" class="btn-primary toggle-menu" name="button">Add To Menu</button>
+    {{/if}}
   </article>
 </template>

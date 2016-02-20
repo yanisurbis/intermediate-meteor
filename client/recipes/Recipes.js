@@ -14,3 +14,9 @@ Template.Recipes.helpers({
     return Recipes.find({})
   }
 })
+
+Template.Recipes.events({
+  'click .new-recipe': function() {
+    Session.set('newRecipe', true)
+  }
+})
